@@ -1,4 +1,4 @@
-Coin Changer Kata
+# Coin Changer Kata
 Introductory kata for learning Java
 
 ## Contributing
