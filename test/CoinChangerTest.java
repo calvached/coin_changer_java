@@ -9,8 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class CoinChangerTest {
     @Test
     public void returnsOnePennyIfGiven1() {
-        ArrayList<Integer> coins = new ArrayList<Integer>();
-        ArrayList change = CoinChanger.makeChange(1, coins);
+        ArrayList change = CoinChanger.makeChange(1);
         List<Integer> expectedCoins = Arrays.asList(1);
 
         assertEquals(expectedCoins, change);
@@ -18,8 +17,7 @@ public class CoinChangerTest {
 
     @Test
     public void returnsThreePenniesIfGiven3() {
-        ArrayList<Integer> coins = new ArrayList<Integer>();
-        ArrayList change = CoinChanger.makeChange(3, coins);
+        ArrayList change = CoinChanger.makeChange(3);
         List<Integer> expectedCoins = Arrays.asList(1, 1, 1);
 
         assertEquals(expectedCoins, change);
@@ -27,8 +25,7 @@ public class CoinChangerTest {
 
     @Test
     public void returnsANickelAndTwoPenniesIfGiven7() {
-        ArrayList<Integer> coins = new ArrayList<Integer>();
-        ArrayList change = CoinChanger.makeChange(7, coins);
+        ArrayList change = CoinChanger.makeChange(7);
         List<Integer> expectedCoins = Arrays.asList(5, 1, 1);
 
         assertEquals(expectedCoins, change);
@@ -36,8 +33,7 @@ public class CoinChangerTest {
 
     @Test
     public void returnsTwoDimesIfGiven20() {
-        ArrayList<Integer> coins = new ArrayList<Integer>();
-        ArrayList change = CoinChanger.makeChange(20, coins);
+        ArrayList change = CoinChanger.makeChange(20);
         List<Integer> expectedCoins = Arrays.asList(10, 10);
 
         assertEquals(expectedCoins, change);
@@ -45,8 +41,7 @@ public class CoinChangerTest {
 
     @Test
     public void returnsThreeQuartersIfGiven75() {
-        ArrayList<Integer> coins = new ArrayList<Integer>();
-        ArrayList change = CoinChanger.makeChange(75, coins);
+        ArrayList change = CoinChanger.makeChange(75);
         List<Integer> expectedCoins = Arrays.asList(25, 25, 25);
 
         assertEquals(expectedCoins, change);
@@ -54,8 +49,7 @@ public class CoinChangerTest {
 
     @Test
     public void returnsCorrectChangeForAnyAmount() {
-        ArrayList<Integer> coins = new ArrayList<Integer>();
-        ArrayList change = CoinChanger.makeChange(68, coins);
+        ArrayList change = CoinChanger.makeChange(68);
         List<Integer> expectedCoins = Arrays.asList(25, 25, 10, 5, 1, 1, 1);
 
         assertEquals(expectedCoins, change);

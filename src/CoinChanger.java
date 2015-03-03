@@ -6,34 +6,20 @@ public class CoinChanger {
     private static final int NICKEL = 5;
     private static final int PENNY = 1;
 
-    public static ArrayList makeChange(int amount, ArrayList coins) {
+    private static final int[] COINS = {QUARTER, DIME, NICKEL, PENNY};
 
-        if (amount >= QUARTER ) {
-            amount = amount - QUARTER;
-            coins.add(QUARTER);
+    public static ArrayList makeChange(int amount) {
+        ArrayList<Integer> change = new ArrayList<Integer>();
 
-            return makeChange(amount, coins);
-        }
-        else if (amount >= DIME ) {
-            amount = amount - DIME;
-            coins.add(DIME);
+        for (int coin : COINS) {
 
-            return makeChange(amount, coins);
+            while (amount >= coin) {
+                amount -= coin;
+                change.add(coin);
+            }
         }
-        else if (amount >= NICKEL ) {
-            amount = amount - NICKEL;
-            coins.add(NICKEL);
 
-            return makeChange(amount, coins);
-        }
-        else if (amount >= PENNY ) {
-            amount = amount - PENNY;
-            coins.add(PENNY);
-
-            return makeChange(amount, coins);
-        }
-        else {
-            return coins;
-        }
+        return change;
     }
+
 }
